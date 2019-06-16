@@ -1,2 +1,3 @@
-# C2C
-## Programs executed during C2C
+# Algorithms and Data Structures
+## Programs executed in Java and Python
+
