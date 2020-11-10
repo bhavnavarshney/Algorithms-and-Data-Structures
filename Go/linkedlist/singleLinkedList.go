@@ -78,7 +78,7 @@ func (l *SinglyLinkedList) DeleteAtEnd() {
 	}
 	pointer := l.Head
 	previous := pointer
-	for pointer.Next == nil {
+	for pointer.Next != nil {
 		previous = pointer
 		pointer = pointer.Next
 	}
