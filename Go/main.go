@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/bhavnavarshney/Algorithms-and-Data-Structures/Go/hashing"
 	"github.com/bhavnavarshney/Algorithms-and-Data-Structures/Go/linkedlist"
 )
 
@@ -34,5 +35,8 @@ func main() {
 	l2.Print("Delete at End") // 5 10
 	l2.DeleteAtIndex(1)
 	l2.Print("Delete at Index 1") // 5
+
+	fmt.Println("\n******** HASHING *********")
+	hashing.TestHashing()
 
 }
