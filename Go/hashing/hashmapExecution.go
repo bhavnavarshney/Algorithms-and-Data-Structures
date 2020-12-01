@@ -3,6 +3,7 @@ package hashing
 import "fmt"
 
 func TestHashing() {
+	fmt.Println("\n******** HASHING *********")
 	hashmap, err := createHashMap(5)
 	if err != nil {
 		fmt.Printf("Error in creating hashmap. Error:%v", err)
