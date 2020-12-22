@@ -24,6 +24,9 @@ func TestSearching() {
 	case 2:
 		result = binarySearch(arr, m)
 		break
+	case 3:
+		result = ternarySearch(0, len(arr)-1, m, arr)
+		break
 	}
 	fmt.Println("Found at index: ", result)
 }
