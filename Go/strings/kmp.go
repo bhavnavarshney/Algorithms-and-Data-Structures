@@ -2,30 +2,52 @@ package strings
 
 import "fmt"
 
-func kmp(haystack, needle string) []int {
-	subsPositions := []int{}
-	patternTable := fillTable(needle)
-	fmt.Println("FillTable: ", patternTable)
-	return subsPositions
+func KMP(haystack string, needle string) int {
+	Nstr, Npattern := len(haystack), len(needle)
+	if Nstr == 0 && Npattern == 0 || Npattern == 0 {
+		return 0
+	}
+	table := fillTable(needle)
+	fmt.Println(table)
+	str, pattern := 0, 0
+
+	for str < Nstr {
+		if haystack[str] == needle[pattern] {
+			str++
+			pattern++
+		}
+		if pattern == Npattern {
+			return str - pattern
+		} else if str < Nstr && haystack[str] != needle[pattern] {
+			if pattern != 0 {
+				pattern = table[pattern-1]
+			} else {
+				str++
+			}
+		}
+
+	}
+	return -1
 }
 
 func fillTable(needle string) []int {
-	lenNeedle := len(needle)
-	table := make([]int, lenNeedle)
-	i, j := 0, 1
+	n := len(needle)
+	table := make([]int, n)
+	i := 0
+	j := 1
 
-	for j < lenNeedle {
+	for j < n {
 		if needle[i] == needle[j] {
-			table[j] = table[j-1] + 1
+			table[j] = i + 1
 			i++
 			j++
-			continue
-		}
-		if i == 0 {
-			table[j] = i
-			j++
 		} else {
-			i = table[i-1]
+			if i != 0 {
+				i = table[i-1]
+			} else {
+				table[j] = 0
+				j++
+			}
 		}
 	}
 	return table
