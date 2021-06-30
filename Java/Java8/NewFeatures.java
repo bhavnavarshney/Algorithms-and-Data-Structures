@@ -12,6 +12,12 @@ public class NewFeatures {
 
         LambdaFeature lf = new LambdaFeature();
         lf.whatIsLamdaFeature();
+
+        StreamsDemo sd = new StreamsDemo();
+        sd.whatIsStream();
+
+        MethodRef mr = new MethodRef();
+        mr.howIsMethodPassedAsRef();
     }
 
 }

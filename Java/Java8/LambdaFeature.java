@@ -21,6 +21,7 @@ public class LambdaFeature {
         MyInterface a ;
         // a = (String s) -> System.out.println("Hey! This is lamda function and much better way of implementing me! If you want to see the magic, checkout what is created after you compile me!");
         // As there is only 1 parameter - You can write like below without braces and type!
+        // This is implemented using Consumer interface!
         a = s-> System.out.println("Hey! This is lamda function and much better way of implementing me! If you want to see the magic, checkout what is created after you compile me, "+s);
 
         a.something("Developer");
